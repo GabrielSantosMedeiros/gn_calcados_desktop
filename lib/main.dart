@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
           color: Colors.white,
@@ -28,13 +29,32 @@ class MyApp extends StatelessWidget {
               Expanded(
                 child: Container(
                   color: Colors.black,
-                  child: Column(
+                  child: Column(  
                     children: [
                       Expanded(
-                        flex: 1, 
+                        flex: 1,
+                         
                         child: 
-                        Container(
-                          color: Colors.white
+                        Container( // TOP BAR 
+                          color: Colors.white,
+                          padding: EdgeInsets.only(left: 50, top: 10, bottom: 10, right: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "DETALHES DOS PEDIDOS",
+                                style: TextStyle(fontSize: 24, fontFamily: "arial", fontWeight: FontWeight.bold),
+                              ),
+                              TextButton(
+                                onPressed: () {}, 
+                                style: TextButton.styleFrom(
+                                  side: BorderSide(color: Colors.black),
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))
+                                ),
+                                child: Text("ADICIONAR PEDIDO", style: TextStyle(fontWeight: FontWeight.bold),),
+                              )
+                            ],
+                          ),
                         )
                       ),
                       Expanded(flex: 1, child: Container(color: Colors.blue)),
