@@ -45,22 +45,62 @@ class MyApp extends StatelessWidget {
                                 "DETALHES DOS PEDIDOS",
                                 style: TextStyle(fontSize: 24, fontFamily: "arial", fontWeight: FontWeight.bold),
                               ),
-                              TextButton(
+                              ElevatedButton(
                                 onPressed: () {}, 
-                                style: TextButton.styleFrom(
-                                  side: BorderSide(color: Colors.black),
-                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))
-                                ),
-                                child: Text("ADICIONAR PEDIDO", style: TextStyle(fontWeight: FontWeight.bold),),
+                                child: Text("ADICIONAR PEDIDO")
                               )
                             ],
                           ),
                         )
                       ),
-                      Expanded(flex: 1, child: Container(color: Colors.blue)),
-                      Expanded(flex: 1, child: Container(color: Colors.red)),
+                      Expanded(
+                        flex: 1, 
+                        child: Container(
+                          color: Colors.white,
+                          child: Row(
+                            children: [
+                              TextButton(onPressed: () {}, child: Text("TODOS")),
+                              TextButton(onPressed: () {}, child: Text("COMPLETOS")),
+                              TextButton(onPressed: () {}, child: Text("PENDENTES")),
+                              TextButton(onPressed: () {}, child: Text("CANCELADOS")),
+                            ],
+                          ),
+                        )
+                      ),
+                      Expanded(
+                        flex: 1, 
+                        child: Container(
+                          color: Colors.white,
+                          child: Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(top: 10, bottom: 10, left: 10),
+                                padding: EdgeInsets.all(8),
+                                width: 950,
+                                height: 300,
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    hintText: "Buscar",
+                                    prefixIcon: Icon(Icons.search),
+                                    border: OutlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.black)
+                                    )
+                                  ),
+                                ),
+                              ),
+                              ElevatedButton(
+                                onPressed: () {}, 
+                                child: Icon(Icons.filter_list)
+                              ),
+                              ElevatedButton(
+                                onPressed: () {}, 
+                                child: Icon(Icons.sim_card_download_rounded)
+                              ),
+                            ],
+                          ),
+                        )
+                      ),
                       Expanded(flex: 6, child: Container(color: Colors.blue)),
-
                     ],
                   ),
                 ))
